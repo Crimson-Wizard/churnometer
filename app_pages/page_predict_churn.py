@@ -10,19 +10,19 @@ def page_predict_churn_body():
     version = 'v1'
     # load needed files
     churn_pipe_dc_fe = load_pkl_file(
-        f'outputs/ml_pipeline/predict_churn/{version}/clf_pipeline_data_cleaning_feat_eng.pkl')
+        f'jupyter_notebooks/outputs/ml_pipeline/predict_churn/{version}/clf_pipeline_data_cleaning_feat_eng.pkl')
     churn_pipe_model = load_pkl_file(
-        f"outputs/ml_pipeline/predict_churn/{version}/clf_pipeline_model.pkl")
+        f"jupyter_notebooks/outputs/ml_pipeline/predict_churn/{version}/clf_pipeline_model.pkl")
     churn_feat_importance = plt.imread(
-        f"outputs/ml_pipeline/predict_churn/{version}/features_importance.png")
+        f"jupyter_notebooks/outputs/ml_pipeline/predict_churn/{version}/features_importance.png")
     X_train = pd.read_csv(
-        f"outputs/ml_pipeline/predict_churn/{version}/X_train.csv")
+        f"jupyter_notebooks/outputs/ml_pipeline/predict_churn/{version}/X_train.csv")
     X_test = pd.read_csv(
-        f"outputs/ml_pipeline/predict_churn/{version}/X_test.csv")
+        f"jupyter_notebooks/outputs/ml_pipeline/predict_churn/{version}/X_test.csv")
     y_train = pd.read_csv(
-        f"outputs/ml_pipeline/predict_churn/{version}/y_train.csv").values
+        f"jupyter_notebooks/outputs/ml_pipeline/predict_churn/{version}/y_train.csv").values
     y_test = pd.read_csv(
-        f"outputs/ml_pipeline/predict_churn/{version}/y_test.csv").values
+        f"jupyter_notebooks/outputs/ml_pipeline/predict_churn/{version}/y_test.csv").values
 
     st.write("### ML Pipeline: Predict Prospect Churn")
     # display pipeline training summary conclusions

@@ -10,19 +10,19 @@ def page_predict_tenure_body():
     # load tenure pipeline files
     version = 'v1'
     tenure_pipe = load_pkl_file(
-        f"outputs/ml_pipeline/predict_tenure/{version}/clf_pipeline.pkl")
+        f"jupyter_notebooks/outputs/ml_pipeline/predict_tenure/{version}/clf_pipeline.pkl")
     tenure_labels_map = load_pkl_file(
-        f"outputs/ml_pipeline/predict_tenure/{version}/label_map.pkl")
+        f"jupyter_notebooks/outputs/ml_pipeline/predict_tenure/{version}/label_map.pkl")
     tenure_feat_importance = plt.imread(
-        f"outputs/ml_pipeline/predict_tenure/{version}/features_importance.png")
+        f"jupyter_notebooks/outputs/ml_pipeline/predict_tenure/{version}/features_importance.png")
     X_train = pd.read_csv(
-        f"outputs/ml_pipeline/predict_tenure/{version}/X_train.csv")
+        f"jupyter_notebooks/outputs/ml_pipeline/predict_tenure/{version}/X_train.csv")
     X_test = pd.read_csv(
-        f"outputs/ml_pipeline/predict_tenure/{version}/X_test.csv")
+        f"jupyter_notebooks/outputs/ml_pipeline/predict_tenure/{version}/X_test.csv")
     y_train = pd.read_csv(
-        f"outputs/ml_pipeline/predict_tenure/{version}/y_train.csv")
+        f"jupyter_notebooks/outputs/ml_pipeline/predict_tenure/{version}/y_train.csv")
     y_test = pd.read_csv(
-        f"outputs/ml_pipeline/predict_tenure/{version}/y_test.csv")
+        f"jupyter_notebooks/outputs/ml_pipeline/predict_tenure/{version}/y_test.csv")
 
     st.write("### ML Pipeline: Predict Prospect Tenure")
     # display pipeline training summary conclusions

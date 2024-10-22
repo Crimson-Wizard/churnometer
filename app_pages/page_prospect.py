@@ -12,10 +12,10 @@ def page_prospect_body():
     # load predict churn files
     version = 'v1'
     churn_pipe_dc_fe = load_pkl_file(
-        f'outputs/ml_pipeline/predict_churn/{version}/clf_pipeline_data_cleaning_feat_eng.pkl')
+        f'jupyter_notebooks/outputs/ml_pipeline/predict_churn/{version}/clf_pipeline_data_cleaning_feat_eng.pkl')
     churn_pipe_model = load_pkl_file(
-        f"outputs/ml_pipeline/predict_churn/{version}/clf_pipeline_model.pkl")
-    churn_features = (pd.read_csv(f"outputs/ml_pipeline/predict_churn/{version}/X_train.csv")
+        f"jupyter_notebooks/outputs/ml_pipeline/predict_churn/{version}/clf_pipeline_model.pkl")
+    churn_features = (pd.read_csv(f"jupyter_notebooks/outputs/ml_pipeline/predict_churn/{version}/X_train.csv")
                       .columns
                       .to_list()
                       )
@@ -23,10 +23,10 @@ def page_prospect_body():
     # load predict tenure files
     version = 'v1'
     tenure_pipe = load_pkl_file(
-        f"outputs/ml_pipeline/predict_tenure/{version}/clf_pipeline.pkl")
+        f"jupyter_notebooks/outputs/ml_pipeline/predict_tenure/{version}/clf_pipeline.pkl")
     tenure_labels_map = load_pkl_file(
-        f"outputs/ml_pipeline/predict_tenure/{version}/label_map.pkl")
-    tenure_features = (pd.read_csv(f"outputs/ml_pipeline/predict_tenure/{version}/X_train.csv")
+        f"jupyter_notebooks/outputs/ml_pipeline/predict_tenure/{version}/label_map.pkl")
+    tenure_features = (pd.read_csv(f"jupyter_notebooks/outputs/ml_pipeline/predict_tenure/{version}/X_train.csv")
                        .columns
                        .to_list()
                        )
@@ -34,13 +34,13 @@ def page_prospect_body():
     # load cluster analysis files
     version = 'v1'
     cluster_pipe = load_pkl_file(
-        f"outputs/ml_pipeline/cluster_analysis/{version}/cluster_pipeline.pkl")
-    cluster_features = (pd.read_csv(f"outputs/ml_pipeline/cluster_analysis/{version}/TrainSet.csv")
+        f"jupyter_notebooks/outputs/ml_pipeline/cluster_analysis/{version}/cluster_pipeline.pkl")
+    cluster_features = (pd.read_csv(f"jupyter_notebooks/outputs/ml_pipeline/cluster_analysis/{version}/TrainSet.csv")
                         .columns
                         .to_list()
                         )
     cluster_profile = pd.read_csv(
-        f"outputs/ml_pipeline/cluster_analysis/{version}/clusters_profile.csv")
+        f"jupyter_notebooks/outputs/ml_pipeline/cluster_analysis/{version}/clusters_profile.csv")
 
     st.write("### Prospect Churnometer Interface")
     st.info(
